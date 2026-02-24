@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* Ajoute un fond gris clair par défaut pour tester */
+body {
+  @apply bg-gray-50 text-gray-900;
+}
