@@ -7,11 +7,14 @@ const Contact = () => {
     message: ''
   });
 
+  // Définition de l'URL de base (Vercel prendra VITE_API_URL en prod)
+  const API_BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+  console.log("L'API utilisée est :", API_BASE_URL);
   const handleSubmit = async (e) => {
     e.preventDefault();
     
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/contact/', {
+      const response = await fetch(`${API_BASE_URL}/api/contact/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,12 +24,17 @@ const Contact = () => {
 
       if (response.ok) {
         alert("Message envoyé avec succès !");
-        setFormData({ name: '', email: '', message: '' }); // Reset
+        // Reset du formulaire
+        setFormData({ name: '', email: '', message: '' });
+        e.target.reset(); // Vide visuellement les champs
       } else {
-        alert("Erreur lors de l'envoi.");
+        const errorData = await response.json();
+        console.error("Détails de l'erreur:", errorData);
+        alert("Erreur lors de l'envoi. Vérifiez les données.");
       }
     } catch (error) {
       console.error("Erreur réseau :", error);
+      alert("Impossible de contacter le serveur.");
     }
   };
 
@@ -44,6 +52,7 @@ const Contact = () => {
             <input 
               type="text" 
               required
+              value={formData.name}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
               placeholder="Jean Dupont"
               onChange={(e) => setFormData({...formData, name: e.target.value})}
@@ -55,6 +64,7 @@ const Contact = () => {
             <input 
               type="email" 
               required
+              value={formData.email}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
               placeholder="jean@exemple.com"
               onChange={(e) => setFormData({...formData, email: e.target.value})}
@@ -66,6 +76,7 @@ const Contact = () => {
             <textarea 
               rows="4" 
               required
+              value={formData.message}
               className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
               placeholder="Votre message..."
               onChange={(e) => setFormData({...formData, message: e.target.value})}

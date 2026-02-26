@@ -12,3 +12,19 @@ env/
 
 # Médias locaux (puisque tu utilises Cloudinary en prod)
 media/
+
+# ... autres dossiers
+
+
+
+db.sqlite3
+staticfiles/
+
+# Node / React
+node_modules/
+dist/
+.env
+.env.local
+
+# Divers
+.DS_Store

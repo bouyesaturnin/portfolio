@@ -1,6 +1,17 @@
 @import "tailwindcss";
 
-/* Ajoute un fond gris clair par défaut pour tester */
+/* En v4, on utilise @theme pour les variables */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui;
+}
+
+/* Pour les styles globaux, plus besoin de @layer base obligatoire */
+/* Vous pouvez écrire directement sur les balises */
 body {
-  @apply bg-gray-50 text-gray-900;
+  @apply text-gray-900 bg-gray-50;
+}
+
+/* Si vous tenez à utiliser @layer, assurez-vous de la syntaxe v4 */
+@utility my-custom-class {
+  color: red;
 }
