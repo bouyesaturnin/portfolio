@@ -12,7 +12,15 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-fallback-local')
 # Sur Render, DEBUG doit être False. En local, il sera True si tu as un .env
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ["site-articles.onrender.com", "localhost", "127.0.0.1"]
+# ALLOWED_HOSTS = ["site-articles.onrender.com", "localhost", "127.0.0.1"]
+# Remplace l'ancienne liste par celle-ci
+ALLOWED_HOSTS = [
+    "portfolio-backend5-fp93.onrender.com", 
+    "localhost", 
+    "127.0.0.1"
+]
+
+CSRF_TRUSTED_ORIGINS = ["https://portfolio-backend5-fp93.onrender.com"]
 
 # 3. Applications
 INSTALLED_APPS = [
