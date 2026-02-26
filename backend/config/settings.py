@@ -83,9 +83,7 @@ STORAGES = {
         "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
     },
     "staticfiles": {
-        # ON CHANGE LE BACKEND ICI : 
-        # On utilise 'CompressedStaticFilesStorage' au lieu de 'CompressedManifestStaticFilesStorage'
-        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.StaticFilesStorage", 
     },
 }
 
@@ -107,5 +105,5 @@ EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 # 9. CORS & Sécurité
 CORS_ALLOW_ALL_ORIGINS = True  # À restreindre plus tard pour la sécurité
 # AJOUTE CES DEUX LIGNES pour satisfaire le plugin Cloudinary qui fait l'erreur
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
