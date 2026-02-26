@@ -14,11 +14,17 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 # ALLOWED_HOSTS = ["site-articles.onrender.com", "localhost", "127.0.0.1"]
 # Remplace l'ancienne liste par celle-ci
-ALLOWED_HOSTS = [
-    "portfolio-backend5-fp93.onrender.com", 
-    "localhost", 
-    "127.0.0.1"
-]
+# ALLOWED_HOSTS = [
+#     "portfolio-backend5-fp93.onrender.com", 
+#     "localhost", 
+#     "127.0.0.1"
+# ]
+
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME]
+else:
+    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "*"]
 
 CSRF_TRUSTED_ORIGINS = ["https://portfolio-backend5-fp93.onrender.com"]
 
