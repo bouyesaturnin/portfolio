@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import api from './api'; // Importe ton instance axios configurée
+import api from "../services/api";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
