@@ -88,16 +88,16 @@ const Footer = () => {
             {/* Réseaux Sociaux (Icons style) */}
             <div className="flex gap-4">
             
-              <a href="https://github.com/..." target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#24292e] hover:text-white transition-all duration-300">
+              <a href="https://github.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#24292e] hover:text-white transition-all duration-300">
                   <FontAwesomeIcon icon={faGithub} className="text-xl" />
              </a>
-              <a href="https://linkedin.com/in/..." target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#0077b5] hover:text-white transition-all duration-300">
+              <a href="https://www.linkedin.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#0077b5] hover:text-white transition-all duration-300">
                  <FontAwesomeIcon icon={faLinkedin} className="text-xl" />
               </a>
-              <a href="https://linkedin.com/in/..." target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#0077b5] hover:text-white transition-all duration-300">
+              <a href="https://www.facebook.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#0077b5] hover:text-white transition-all duration-300">
                  <FontAwesomeIcon icon={faFacebook} className="text-xl" />
               </a>
-              <a href="https://linkedin.com/in/..." target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#ff0000] hover:text-white transition-all duration-300">
+              <a href="https://www.youtube.com" target="_blank" className="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 text-gray-600 hover:bg-[#ff0000] hover:text-white transition-all duration-300">
                  <FontAwesomeIcon icon={faYoutube} className="text-xl" />
               </a>
             </div>
