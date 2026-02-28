@@ -22,20 +22,20 @@ const Skills = () => {
 
   return (
     <section className="py-24 bg-gray-50/30">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Expertise Technique</h2>
+      <div className="px-6 mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
+          <h2 className="mb-4 text-4xl font-bold text-gray-900">Expertise Technique</h2>
           <div className="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
+        <div className="grid justify-center grid-cols-1 gap-8 md:grid-cols-3">
           {skillCategories.map((cat, index) => (
-            <div key={index} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 group">
-              <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">
+            <div key={index} className="p-8 transition-all duration-300 bg-white border border-gray-100 shadow-sm rounded-3xl hover:shadow-xl group">
+              <div className="inline-block mb-6 text-4xl transition-transform duration-300 group-hover:scale-110">
                 {cat.icon}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{cat.title}</h3>
-              <p className="text-gray-600 mb-8 text-sm leading-relaxed">
+              <h3 className="mb-4 text-2xl font-bold text-gray-900">{cat.title}</h3>
+              <p className="mb-8 text-sm leading-relaxed text-gray-600">
                 {cat.description}
               </p>
               

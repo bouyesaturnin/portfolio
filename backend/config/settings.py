@@ -83,6 +83,18 @@ DATABASES = {
     )
 }
 
+Key : VITE_API_URL
+Value : https://portfolio-backend5-fp93.onrender.com
+
+CORS_ALLOWED_ORIGINS = [
+    "https://portfolio-backend5-fp93.onrender.com", # Ton backend lui-même
+    "http://localhost:5173",                       # Le port par défaut de Vite (local)
+    "http://127.0.0.1:5173",
+]
+
+# Si tu as déjà l'URL de ton frontend déployé, ajoute-la ici aussi :
+# CORS_ALLOWED_ORIGINS += ["https://ton-site-frontend.onrender.com"]
+
 # 6. Gestion des fichiers (Syntaxe Django 4.2/5.0+)
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -117,7 +129,7 @@ EMAIL_HOST_USER = 'bouye1978saturnin@gmail.com'
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
 # 9. CORS & Sécurité
-CORS_ALLOW_ALL_ORIGINS = True  # À restreindre plus tard pour la sécurité
+# CORS_ALLOW_ALL_ORIGINS = True  # À restreindre plus tard pour la sécurité
 # AJOUTE CES DEUX LIGNES pour satisfaire le plugin Cloudinary qui fait l'erreur
 STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
