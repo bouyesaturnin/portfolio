@@ -83,13 +83,12 @@ DATABASES = {
     )
 }
 
-Key : VITE_API_URL
-Value : https://portfolio-backend5-fp93.onrender.com
+
 
 CORS_ALLOWED_ORIGINS = [
     "https://portfolio-backend5-fp93.onrender.com", # Ton backend lui-même
-    "http://localhost:5173",                       # Le port par défaut de Vite (local)
-    "http://127.0.0.1:5173",
+    # "http://localhost:5173",                       # Le port par défaut de Vite (local)
+    # "http://127.0.0.1:5173",
 ]
 
 # Si tu as déjà l'URL de ton frontend déployé, ajoute-la ici aussi :
