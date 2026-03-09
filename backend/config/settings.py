@@ -31,7 +31,8 @@ ALLOWED_HOSTS += [h for h in EXTRA_ALLOWED_HOSTS if h]
 CSRF_TRUSTED_ORIGINS = [
                             "https://portfolio-backend5-fp93.onrender.com",
                             "https://bm-backend.ovh",
-                            "https://www.bm-backend.ovh"
+                            "https://www.bm-backend.ovh",
+                            "https://saturnin.bm-backend.ovh",
                         ]
 # 3. Applications
 INSTALLED_APPS = [

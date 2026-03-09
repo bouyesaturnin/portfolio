@@ -2,8 +2,6 @@ import ProjectCard from './ProjectCard';
 
 const Projects = () => {
   const myProjects = [
-    // ... copie tous tes objets ici
-    
     {
       title: "Blog Interactif Fullstack",
       description: "Un système de gestion d'articles avec recherche dynamique, commentaires et authentification JWT.",

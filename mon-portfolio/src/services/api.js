@@ -5,7 +5,7 @@ import axios from 'axios';
 // Sinon, on utilise localhost pour le développement
 const API_URL = window.location.hostname === "localhost" 
     ? "http://127.0.0.1:8000" 
-    : "https://portfolio-backend5-fp93.onrender.com";
+    : "https://saturnin.bm-backend.ovh";
 
 const api = axios.create({
     baseURL: API_URL,
