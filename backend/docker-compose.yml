@@ -1,0 +1,36 @@
+services:
+  django:
+    build: .
+    container_name: portfolio_django
+    restart: always
+    env_file: .env
+    expose:
+      - "8002"
+    volumes:
+      - static_volume:/app/staticfiles
+
+  nginx:
+    image: nginx:alpine
+    container_name: portfolio_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - static_volume:/app/staticfiles
+      - certbot_www:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+    depends_on:
+      - django
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - certbot_www:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+
+volumes:
+  static_volume:
+  certbot_www:
+  certbot_conf:

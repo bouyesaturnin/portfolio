@@ -21,13 +21,18 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 # ]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+EXTRA_ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
+
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 if RENDER_EXTERNAL_HOSTNAME:
-    ALLOWED_HOSTS = [RENDER_EXTERNAL_HOSTNAME]
-else:
-    ALLOWED_HOSTS = ["localhost", "127.0.0.1", "*"]
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
+ALLOWED_HOSTS += [h for h in EXTRA_ALLOWED_HOSTS if h]
 
-CSRF_TRUSTED_ORIGINS = ["https://portfolio-backend5-fp93.onrender.com"]
-
+CSRF_TRUSTED_ORIGINS = [
+                            "https://portfolio-backend5-fp93.onrender.com",
+                            "https://bm-backend.ovh",
+                            "https://www.bm-backend.ovh"
+                        ]
 # 3. Applications
 INSTALLED_APPS = [
     'cloudinary_storage', 
